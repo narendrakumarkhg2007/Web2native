@@ -42,20 +42,31 @@ Web2Native is a lightweight "Native Wrapper Engine" that bridges the gap between
 ### 1. Build for Android
 This script handles asset mirroring, project generation, and compilation of a Debug APK and Release AAB all bundled in a zip file.
 
-```bash
+**Linux/MacOS**
+```
 python3 web2candroid.cpython-314.pyc \
   --name "MyApp" \
   --package "com.company.myapp" \
   --url "[https://your-web-app.com](https://your-web-app.com)" \
   --icon "./path/to/icon.png" \
   --splash "./path/to/splash.png"
+```
 
+**Windows**
+```
+python web2candroid.cpython-314.pyc \
+  --name "MyApp" \
+  --package "com.company.myapp" \
+  --url "[https://your-web-app.com](https://your-web-app.com)" \
+  --icon "./path/to/icon.png" \
+  --splash "./path/to/splash.png"
 ```
 
 ### 2. Build for iOS  
 This script handle assest mirroring, project generation, and compilation of iOS .ipa file bundle in a zip file.
 
-```bash
+**MacOS only**
+```
 python3 web2cios.cpython-314.pyc \
   --name "MyApp" \
   --package "com.company.myapp" \
