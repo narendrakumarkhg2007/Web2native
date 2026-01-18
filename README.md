@@ -43,7 +43,7 @@ Web2Native is a lightweight "Native Wrapper Engine" that bridges the gap between
 This script handles asset mirroring, project generation, and compilation of a Debug APK and Release AAB all bundled in a zip file.
 
 ```bash
-python3 web2candroid.py \
+python3 web2candroid.cpython-314.pyc \
   --name "MyApp" \
   --package "com.company.myapp" \
   --url "[https://your-web-app.com](https://your-web-app.com)" \
@@ -56,7 +56,7 @@ python3 web2candroid.py \
 This script handle assest mirroring, project generation, and compilation of iOS .ipa file bundle in a zip file.
 
 ```bash
-python3 web2cios.py \
+python3 web2cios.cpython-314.pyc \
   --name "MyApp" \
   --package "com.company.myapp" \
   --url "[https://your-web-app.com](https://your-web-app.com)" \
