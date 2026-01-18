@@ -1,4 +1,4 @@
-# Web2Native Universal Compiler 🚀
+# Web2native Universal Compiler 🚀
 
 **The safest and fastest way to transform any Web Application into high-performance Native Android & iOS apps.**
 
@@ -6,7 +6,8 @@ Web2Native is a lightweight "Native Wrapper Engine" that bridges the gap between
 
 ---
 
-## 🌟 Key Features
+## ⚡ The Unified Bridge (Write Once, Run Everywhere)
+### 🌟 Key Features
 
 * **Biometric Authentication:** FaceID/TouchID (iOS) and Fingerprint/Face (Android) integration.
 * **Secure Screen:** Native prevention of screenshots and screen recording for sensitive data.
@@ -18,13 +19,6 @@ Web2Native is a lightweight "Native Wrapper Engine" that bridges the gap between
 * **Flashlight:** To access native device flashlight.
 * **External browser Access:** To open a url or a hyperlink on external browser for full access & control.
 * **NFC:** To access built-in NFC on supported devices.
-
-### ⚡ The Unified Bridge (Write Once, Run Everywhere)
-A shared API allows your website to talk to the phone hardware directly:
-* **Haptics:** `Native.vibrate(duration)`
-* **System Alerts:** `Native.pushNotification(title, message)`
-* **Hardware Sensors:** Access Battery level and Power-save status.
-* **Clipboard:** `Native.copyToClipboard(text)`
 
 ### 📦 Pro Build Pipeline
 * **Offline Mirroring:** Automatically clones your website assets for offline-first capabilities.
@@ -65,115 +59,91 @@ This script handle assest mirroring, project generation, and compilation of iOS 
 python3 web2cios.py \
   --name "MyApp" \
   --package "com.company.myapp" \
-  --url "[https://your-web-app.com](https://your-web-app.com)"
+  --url "[https://your-web-app.com](https://your-web-app.com)" \
+  --icon "./path/to/icon.png" \
+  --splash "./path/to/splash.png"
 ```
 
 🔗 Using the Native Bridge (JS API)
 Once your app is running inside the Web2Native wrapper, you can call these functions directly from your web application's JavaScript.
 
-// Trigger Biometric Login
-window.onload() => {
-    Native.loginBiometric(); // **For Biometric login access to the app.**
-}
+**Trigger Biometric Login:** `window.onload = () => { Native.loginBiometric(); }`
 
-// Reload app
-Native.reload();
+**Reload App:** `Native.reload();`
 
-// To get package name of the application
-Native.getPackageName();
+**To get package name of the application:** `Native.getPackageName();`
 
-// To get Device Information
-Native.getDeviceInfo();
+**To get Device Information:** `Native.getDeviceInfo();`
 
-// To clear cache Memory
-Native.clearCache();
+**To clear cache Memory:** `Native.clearCache();`
 
-// To enable secure screen
-Native.enableSecureScreen() // **For enable the secure screen to disable screenshots or screen recorders for privacy based apps.**
+**To enable secure screen:** `Native.enableSecureScreen()`
 
-// To disable secure screen
-Native.disableSecureScreen() // **For disable the secure screen to enable screenshots or screen recorders for privacy based apps.**
+**To disable secure screen:** `Native.disableSecureScreen()`
 
-// To get battery percentage
-Native.getBatteryLevel();
+**To get battery percentage:** `Native.getBatteryLevel();`
 
-// To know the device is Charging or not
-Native.isCharging();
+**To know the device is Charging or not:** `Native.isCharging();`
 
-// To know the power saving mode is on or not
-Native.isPowerSaveMode();
+**To know the power saving mode is on or not:** `Native.isPowerSaveMode();`
 
-// To copy data into Clipboard
-Native.copyToClipboard();
+**To copy data into Clipboard:** `Native.copyToClipboard();`
 
-// To open external browser
-Native.openExternalBrowser(URL);
+**To open external browser:** `Native.openExternalBrowser(URL);`
 
-// To send Haptics effect
-Native.vibrate(duration);
+**To send Haptics effect:** `Native.vibrate(duration);`
 
-// To keep screen on
-Native.onScreen();
+**To keep screen on:** `Native.onScreen();`
 
-// To start NFC Scan
-Native.startNFCScan();
+**To start NFC Scan:** `Native.startNFCScan();`
 
-// To stop NFC Scan
-Native.stopNFCScan();
+**To stop NFC Scan:** `Native.stopNFCScan();`
 
-// To access device's flashlight
-Native.flashlight();
+**To access device's flashlight:** `Native.flashlight();`
 
-// Bluetooth Access
-Native.bluetooth();
+**Bluetooth Access:** `Native.bluetooth();`
 
-// Push Notification
-Native.notification(title, msg);
+**Push Notification:** `Native.notification(title, msg);`
 
-/**
- * Web2Native Bridge API
- * Exposes all hardware methods defined in the Kotlin MainActivity.
- */
-const HardwareAPI = {
-    
-    // --- AUTHENTICATION ---
-    loginBiometric: () => Native.loginBiometric(),
+**Note:** It supports also web standard hardware APIs also like as - Microphone, Camera, Geolocation, etc.
 
-    // --- SYSTEM & SECURITY ---
-    finishApp: () => Native.finishApp(),
-    getPackageName: () => Native.getPackageName(),
-    reloadPage: () => Native.reloadPage(),
-    clearCache: () => Native.clearCache(),
-    enableSecureScreen: () => Native.enableSecureScreen(), // Prevents Screenshots/Recordings
-    disableSecureScreen: () => Native.disableSecureScreen(),
-    getDeviceInfo: () => Native.getDeviceInfo(),
-    toggleKeepScreenOn: (bool) => Native.toggleKeepScreenOn(bool),
-
-    // --- BATTERY & POWER ---
-    getBatteryStatus: () => Native.getBatteryStatus(), // Returns 0-100
-    isPowerSaveMode: () => Native.isPowerSaveMode(),   // Returns boolean
-
-    // --- HARDWARE PERIPHERALS ---
-    vibrate: (durationMs) => Native.vibrate(durationMs || 500),
-    toggleFlashlight: (status) => Native.toggleFlashlight(status),
-    toggleBluetooth: (status) => Native.toggleBluetooth(status),
-    
-    // --- NFC CONTROLS ---
-    startNFCScan: () => Native.startNFCScan(),
-    stopNFCScan: () => Native.stopNFCScan(),
-
-    // --- UTILITIES ---
-    copyToClipboard: (text) => Native.copyToClipboard(text),
-    openExternalBrowser: (url) => Native.openExternalBrowser(url),
-    pushNotification: (title, message) => Native.pushNotification(title, message)
-
-};
 📂 Output Structure
 The compiler automates the cleanup process, leaving you only with the final artifacts:
 
 Android: A .zip containing the Debug APK, Release AAB (for Play Store), and metadata.
 
 iOS: A structured Xcode project directory ready for one-click deployment.
+
+## To upload your APK or AAB (Android App Bundle) to the Google Play Store, it must be digitally signed. Here’s the complete, correct process in simple steps.
+
+⚠️ Important: Google now requires AAB for new apps. APK is only for testing or legacy updates.
+
+1️⃣ Create a Keystore (Only Once)
+
+You need a keystore file that contains your private signing key.
+
+**Using Command Line (recommended):** `keytool -genkeypair -v -keystore my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias mykey`
+
+You will be asked:
+
+Keystore password
+
+Key password
+
+Name, organization, country, etc.
+
+**📌 Keep this file safe! If you lose it, you can never update your app again.**
+
+**2️⃣ Sign an APK (If You Are Uploading APK):** `apksigner sign --ks my-release-key.jks --out app-signed.apk app-debug.apk`
+
+**Verify:** `apksigner verify app-signed.apk`
+
+**3️⃣ Sign an AAB (Recommended for Play Store):** `jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 \
+  -keystore my-release-key.jks app-release.aab mykey`
+
+**Verify:** `jarsigner -verify -verbose app-release.aab`
+
+#### Now upload the signed .aab to Google Play.
 
 📝 License & Author
 Author: Narendra Kumar
