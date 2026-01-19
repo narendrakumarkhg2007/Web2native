@@ -67,7 +67,7 @@ This script handle assest mirroring, project generation, and compilation of iOS 
 
 **MacOS only**
 ```
-python3 web2cios.cpython-314.pyc \
+python3 web2cios.py \
   --name "MyApp" \
   --package "com.company.myapp" \
   --url "[https://your-web-app.com](https://your-web-app.com)" \
