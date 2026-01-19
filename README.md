@@ -44,7 +44,7 @@ This script handles asset mirroring, project generation, and compilation of a De
 
 **Linux/MacOS**
 ```
-python3 web2candroid.cpython-314.pyc \
+python3 web2candroid.py \
   --name "MyApp" \
   --package "com.company.myapp" \
   --url "[https://your-web-app.com](https://your-web-app.com)" \
@@ -54,7 +54,7 @@ python3 web2candroid.cpython-314.pyc \
 
 **Windows**
 ```
-python web2candroid.cpython-314.pyc \
+python web2candroid.py \
   --name "MyApp" \
   --package "com.company.myapp" \
   --url "[https://your-web-app.com](https://your-web-app.com)" \
